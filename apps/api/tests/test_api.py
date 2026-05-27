@@ -188,6 +188,32 @@ def test_research_unknown_match_without_provider_key() -> None:
     assert response.json()["status"] in {"NEEDS_DATA_PROVIDER_KEY", "PROVIDER_NO_MATCH_FOUND"}
 
 
+def test_live_lab_snapshot() -> None:
+    response = client.post(
+        "/live-lab/snapshot?save=false",
+        json={"home_team": "Flamengo", "away_team": "Cusco FC", "minute": 51, "home_goals": 0, "away_goals": 0},
+    )
+    assert response.status_code == 200
+    body = response.json()
+    assert body["status"] == "LIVE_RESEARCH_SNAPSHOT"
+    assert "probabilities" in body
+
+
+def test_api_football_live_without_key_or_data() -> None:
+    response = client.get("/providers/api-football/live")
+    assert response.status_code == 200
+    body = response.json()
+    assert body["status"] in {"MISSING_API_FOOTBALL_KEY", "LIVE_FIXTURES_IMPORTED_FROM_PROVIDER"}
+
+
+def test_training_instructions() -> None:
+    response = client.get("/providers/training")
+    assert response.status_code == 200
+    body = response.json()
+    assert body["status"] == "TRAINING_WORKFLOW"
+    assert len(body["steps"]) >= 3
+
+
 def test_odds_provider_without_key() -> None:
     response = client.post("/data/odds-provider/the-odds-api?dry_run=true")
     assert response.status_code == 200

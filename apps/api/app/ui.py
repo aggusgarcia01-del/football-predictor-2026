@@ -118,6 +118,8 @@ HOME_HTML = """
           <button class="ghost" onclick="priceTargets()">Cuotas objetivo</button>
           <button class="ghost" onclick="prematchAlerts()">Alertas</button>
           <button class="ghost" onclick="dataAudit()">Auditoria</button>
+          <button class="ghost" onclick="providerLive()">Live API</button>
+          <button class="ghost" onclick="trainingGuide()">Entrenar</button>
           <button class="ghost" onclick="modelHealth()">Health</button>
           <button class="ghost" onclick="statsBombBacktest()">Backtest</button>
           <button class="ghost" onclick="rollingBacktest()">Rolling xG</button>
@@ -146,6 +148,19 @@ HOME_HTML = """
         <button class="warn" onclick="importMetrics()">Importar metricas</button>
         <button class="secondary" onclick="syncStatsBomb()">Sincronizar StatsBomb</button>
         <button class="secondary" onclick="importOddsProvider()">Importar cuotas API</button>
+      </details>
+
+      <details open>
+        <summary>Laboratorio en vivo</summary>
+        <p class="small">Carga minuto y marcador para guardar una prediccion in-play y luego compararla con el resultado final.</p>
+        <input id="liveHome" placeholder="Local: Flamengo" />
+        <input id="liveAway" placeholder="Visitante: Cusco FC" />
+        <div class="split">
+          <input id="liveMinute" placeholder="Minuto" value="51" />
+          <input id="liveScore" placeholder="Marcador 0-0" value="0-0" />
+        </div>
+        <button class="secondary" onclick="liveSnapshot()">Snapshot en vivo</button>
+        <button class="ghost" onclick="liveSnapshots()">Ver snapshots</button>
       </details>
     </aside>
 
@@ -329,6 +344,8 @@ HOME_HTML = """
     async function priceTargets() { showJson(await api(`/value-bets/price-targets/${fixture.value}`)); showTabByName('json'); }
     async function prematchAlerts() { showJson(await api('/value-bets/prematch-alerts')); showTabByName('json'); }
     async function dataAudit() { showJson(await api('/data/audit')); showTabByName('json'); }
+    async function providerLive() { showJson(await api('/providers/api-football/live')); showTabByName('json'); }
+    async function trainingGuide() { showJson(await api('/providers/training')); showTabByName('json'); }
     async function valueBets() { showJson(await api('/value-bets/today')); showTabByName('json'); }
     async function modelHealth() { showJson(await api('/model/health')); showTabByName('json'); }
     async function statsBombBacktest() { showJson(await api('/backtests/run?dataset=statsbomb_open_data', { method:'POST' })); showTabByName('json'); }
@@ -346,6 +363,21 @@ HOME_HTML = """
       showJson(await api('/data/odds-provider/the-odds-api?dry_run=false', { method:'POST' }));
       await refreshOverview();
     }
+    async function liveSnapshot() {
+      const [homeGoals, awayGoals] = document.getElementById('liveScore').value.split('-').map(x => Number(x.trim()));
+      const payload = {
+        home_team: document.getElementById('liveHome').value,
+        away_team: document.getElementById('liveAway').value,
+        minute: Number(document.getElementById('liveMinute').value),
+        home_goals: homeGoals || 0,
+        away_goals: awayGoals || 0
+      };
+      const result = await api('/live-lab/snapshot', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+      showJson(result);
+      report.innerHTML = `<h1>${esc(result.home_team)} vs ${esc(result.away_team)}</h1><p><b>Minuto:</b> ${result.minute} | <b>Marcador:</b> ${result.score.home}-${result.score.away}</p><h2>Probabilidades live</h2><ul>${Object.entries(result.probabilities).map(([k,v]) => `<li>${esc(k)}: ${(v*100).toFixed(1)}%</li>`).join('')}</ul><p><b>Top call:</b> ${esc(result.top_call)}</p><p class="small">${esc(result.notes.join(' '))}</p>`;
+      showTabByName('report');
+    }
+    async function liveSnapshots() { showJson(await api('/live-lab/snapshots')); showTabByName('json'); }
     function showTabByName(name) {
       document.querySelectorAll('.tab').forEach(btn => btn.classList.remove('active'));
       document.querySelectorAll('.panel').forEach(panel => panel.classList.remove('active'));
