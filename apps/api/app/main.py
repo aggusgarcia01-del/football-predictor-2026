@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 
-from app.routers import analysis, backtests, health, ingestion, live_lab, matches, model, prematch, providers, research, simulation, value
+from app.routers import analysis, backtests, health, ingestion, live_lab, matches, model, prematch, providers, research, simulation, training, value
 from app.ui import HOME_HTML
 
 
@@ -38,3 +38,4 @@ app.include_router(prematch.router)
 app.include_router(research.router)
 app.include_router(live_lab.router)
 app.include_router(providers.router)
+app.include_router(training.router)

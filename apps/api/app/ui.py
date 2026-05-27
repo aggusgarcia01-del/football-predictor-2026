@@ -120,6 +120,7 @@ HOME_HTML = """
           <button class="ghost" onclick="dataAudit()">Auditoria</button>
           <button class="ghost" onclick="providerLive()">Live API</button>
           <button class="ghost" onclick="trainingGuide()">Entrenar</button>
+          <button class="ghost" onclick="runTraining()">Run training</button>
           <button class="ghost" onclick="modelHealth()">Health</button>
           <button class="ghost" onclick="statsBombBacktest()">Backtest</button>
           <button class="ghost" onclick="rollingBacktest()">Rolling xG</button>
@@ -346,6 +347,7 @@ HOME_HTML = """
     async function dataAudit() { showJson(await api('/data/audit')); showTabByName('json'); }
     async function providerLive() { showJson(await api('/providers/api-football/live')); showTabByName('json'); }
     async function trainingGuide() { showJson(await api('/providers/training')); showTabByName('json'); }
+    async function runTraining() { showJson(await api('/training/run', { method:'POST' })); showTabByName('json'); }
     async function valueBets() { showJson(await api('/value-bets/today')); showTabByName('json'); }
     async function modelHealth() { showJson(await api('/model/health')); showTabByName('json'); }
     async function statsBombBacktest() { showJson(await api('/backtests/run?dataset=statsbomb_open_data', { method:'POST' })); showTabByName('json'); }

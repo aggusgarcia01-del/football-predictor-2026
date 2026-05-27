@@ -214,6 +214,15 @@ def test_training_instructions() -> None:
     assert len(body["steps"]) >= 3
 
 
+def test_auto_training_run() -> None:
+    response = client.post("/training/run?include_live_provider=false")
+    assert response.status_code == 200
+    body = response.json()
+    assert body["status"] == "TRAINING_RUN_COMPLETED"
+    assert "backtests" in body
+    assert "recommendations" in body
+
+
 def test_odds_provider_without_key() -> None:
     response = client.post("/data/odds-provider/the-odds-api?dry_run=true")
     assert response.status_code == 200
