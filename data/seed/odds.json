@@ -1,0 +1,17 @@
+[
+  { "match_id": "fwc26-001", "bookmaker": "DemoBook", "market": "1X2", "selection": "Home", "decimal_odds": 1.72 },
+  { "match_id": "fwc26-001", "bookmaker": "DemoBook", "market": "1X2", "selection": "Draw", "decimal_odds": 3.75 },
+  { "match_id": "fwc26-001", "bookmaker": "DemoBook", "market": "1X2", "selection": "Away", "decimal_odds": 5.40 },
+  { "match_id": "fwc26-007", "bookmaker": "DemoBook", "market": "1X2", "selection": "Home", "decimal_odds": 1.62 },
+  { "match_id": "fwc26-007", "bookmaker": "DemoBook", "market": "1X2", "selection": "Draw", "decimal_odds": 4.05 },
+  { "match_id": "fwc26-007", "bookmaker": "DemoBook", "market": "1X2", "selection": "Away", "decimal_odds": 5.60 },
+  { "match_id": "fwc26-017", "bookmaker": "DemoBook", "market": "1X2", "selection": "Home", "decimal_odds": 1.58 },
+  { "match_id": "fwc26-017", "bookmaker": "DemoBook", "market": "1X2", "selection": "Draw", "decimal_odds": 4.10 },
+  { "match_id": "fwc26-017", "bookmaker": "DemoBook", "market": "1X2", "selection": "Away", "decimal_odds": 6.20 },
+  { "match_id": "fwc26-019", "bookmaker": "DemoBook", "market": "1X2", "selection": "Home", "decimal_odds": 1.34 },
+  { "match_id": "fwc26-019", "bookmaker": "DemoBook", "market": "1X2", "selection": "Draw", "decimal_odds": 5.20 },
+  { "match_id": "fwc26-019", "bookmaker": "DemoBook", "market": "1X2", "selection": "Away", "decimal_odds": 9.00 },
+  { "match_id": "fwc26-022", "bookmaker": "DemoBook", "market": "1X2", "selection": "Home", "decimal_odds": 1.90 },
+  { "match_id": "fwc26-022", "bookmaker": "DemoBook", "market": "1X2", "selection": "Draw", "decimal_odds": 3.45 },
+  { "match_id": "fwc26-022", "bookmaker": "DemoBook", "market": "1X2", "selection": "Away", "decimal_odds": 4.35 }
+]

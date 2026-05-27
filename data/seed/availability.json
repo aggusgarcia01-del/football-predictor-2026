@@ -1,0 +1,44 @@
+[
+  {
+    "team_id": "arg",
+    "source": "seed_demo_availability",
+    "key_absences": 0,
+    "fatigue_risk": "medium",
+    "notes": "No confirmed real squad feed connected yet."
+  },
+  {
+    "team_id": "fra",
+    "source": "seed_demo_availability",
+    "key_absences": 0,
+    "fatigue_risk": "medium",
+    "notes": "No confirmed real squad feed connected yet."
+  },
+  {
+    "team_id": "bra",
+    "source": "seed_demo_availability",
+    "key_absences": 1,
+    "fatigue_risk": "medium",
+    "notes": "Placeholder absence count for pipeline testing."
+  },
+  {
+    "team_id": "eng",
+    "source": "seed_demo_availability",
+    "key_absences": 0,
+    "fatigue_risk": "low",
+    "notes": "No confirmed real squad feed connected yet."
+  },
+  {
+    "team_id": "mex",
+    "source": "seed_demo_availability",
+    "key_absences": 0,
+    "fatigue_risk": "high",
+    "notes": "High fatigue risk reflects altitude/travel placeholder, not live team news."
+  },
+  {
+    "team_id": "usa",
+    "source": "seed_demo_availability",
+    "key_absences": 0,
+    "fatigue_risk": "low",
+    "notes": "No confirmed real squad feed connected yet."
+  }
+]

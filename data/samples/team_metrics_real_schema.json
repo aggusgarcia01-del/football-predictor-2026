@@ -1,0 +1,21 @@
+{
+  "records": [
+    {
+      "team_id": "mex",
+      "source": "sofascore_manual",
+      "source_name": "SofaScore manual export",
+      "source_url": "https://www.sofascore.com/",
+      "as_of": "2026-06-10",
+      "sample": "last_10_competitive_matches",
+      "sample_size_matches": 10,
+      "is_real_data": true,
+      "data_quality": "sofascore_manual",
+      "npxg_for_per90": 1.35,
+      "npxg_against_per90": 1.05,
+      "shots_on_target_for_per90": 4.4,
+      "corners_for_per90": 4.9,
+      "cards_per90": 2.1,
+      "recent_form_points_per_match": 1.7
+    }
+  ]
+}

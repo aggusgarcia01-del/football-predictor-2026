@@ -1,0 +1,46 @@
+{
+  "lineups": [
+    {
+      "match_id": "fwc26-001",
+      "team_id": "mex",
+      "status": "confirmed",
+      "source": "manual_official_lineup",
+      "updated_at": "NOW",
+      "formation": "4-3-3",
+      "players": [
+        { "name": "ARG GK", "position": "GK", "status": "starter", "rating": 82, "fitness": 0.98, "expected_minutes": 90 },
+        { "name": "ARG RB", "position": "DF", "status": "starter", "rating": 80, "fitness": 0.96, "expected_minutes": 90 },
+        { "name": "ARG CB 1", "position": "DF", "status": "starter", "rating": 84, "fitness": 0.97, "expected_minutes": 90 },
+        { "name": "ARG CB 2", "position": "DF", "status": "starter", "rating": 83, "fitness": 0.96, "expected_minutes": 90 },
+        { "name": "ARG LB", "position": "DF", "status": "starter", "rating": 81, "fitness": 0.95, "expected_minutes": 88 },
+        { "name": "ARG DM", "position": "MF", "status": "starter", "rating": 85, "fitness": 0.96, "expected_minutes": 86 },
+        { "name": "ARG CM 1", "position": "MF", "status": "starter", "rating": 86, "fitness": 0.97, "expected_minutes": 86 },
+        { "name": "ARG CM 2", "position": "MF", "status": "starter", "rating": 84, "fitness": 0.95, "expected_minutes": 82 },
+        { "name": "ARG RW", "position": "FW", "status": "starter", "rating": 88, "fitness": 0.95, "expected_minutes": 82, "set_piece_role": "corners" },
+        { "name": "ARG ST", "position": "FW", "status": "starter", "rating": 89, "fitness": 0.94, "expected_minutes": 80, "set_piece_role": "penalties" },
+        { "name": "ARG LW", "position": "FW", "status": "starter", "rating": 87, "fitness": 0.96, "expected_minutes": 82 }
+      ]
+    },
+    {
+      "match_id": "fwc26-001",
+      "team_id": "rsa",
+      "status": "confirmed",
+      "source": "manual_official_lineup",
+      "updated_at": "NOW",
+      "formation": "4-2-3-1",
+      "players": [
+        { "name": "MEX GK", "position": "GK", "status": "starter", "rating": 77, "fitness": 0.96, "expected_minutes": 90 },
+        { "name": "MEX RB", "position": "DF", "status": "starter", "rating": 75, "fitness": 0.94, "expected_minutes": 90 },
+        { "name": "MEX CB 1", "position": "DF", "status": "starter", "rating": 76, "fitness": 0.94, "expected_minutes": 90 },
+        { "name": "MEX CB 2", "position": "DF", "status": "starter", "rating": 75, "fitness": 0.92, "expected_minutes": 90 },
+        { "name": "MEX LB", "position": "DF", "status": "starter", "rating": 74, "fitness": 0.93, "expected_minutes": 88 },
+        { "name": "MEX DM 1", "position": "MF", "status": "starter", "rating": 76, "fitness": 0.92, "expected_minutes": 86 },
+        { "name": "MEX DM 2", "position": "MF", "status": "starter", "rating": 75, "fitness": 0.91, "expected_minutes": 84 },
+        { "name": "MEX RW", "position": "FW", "status": "starter", "rating": 78, "fitness": 0.93, "expected_minutes": 80 },
+        { "name": "MEX AM", "position": "MF", "status": "starter", "rating": 79, "fitness": 0.92, "expected_minutes": 82, "set_piece_role": "free_kicks" },
+        { "name": "MEX LW", "position": "FW", "status": "starter", "rating": 77, "fitness": 0.90, "expected_minutes": 78 },
+        { "name": "MEX ST", "position": "FW", "status": "starter", "rating": 78, "fitness": 0.91, "expected_minutes": 80, "set_piece_role": "penalties" }
+      ]
+    }
+  ]
+}

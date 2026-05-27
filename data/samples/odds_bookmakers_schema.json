@@ -1,0 +1,31 @@
+{
+  "records": [
+    {
+      "match_id": "fwc26-001",
+      "bookmaker": "Bet365 manual",
+      "market": "1X2",
+      "selection": "Home",
+      "decimal_odds": 1.78,
+      "captured_at": "2026-06-11T18:20:00Z",
+      "source": "manual_entry"
+    },
+    {
+      "match_id": "fwc26-001",
+      "bookmaker": "Betano manual",
+      "market": "1X2",
+      "selection": "Draw",
+      "decimal_odds": 3.85,
+      "captured_at": "2026-06-11T18:20:00Z",
+      "source": "manual_entry"
+    },
+    {
+      "match_id": "fwc26-001",
+      "bookmaker": "1xBet manual",
+      "market": "1X2",
+      "selection": "Away",
+      "decimal_odds": 5.65,
+      "captured_at": "2026-06-11T18:20:00Z",
+      "source": "manual_entry"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+[
+  { "id": "v01", "city": "Mexico City", "country": "Mexico", "altitude_meters": 2240, "avg_temp_c": 18, "avg_humidity": 52, "surface_type": "Grass" },
+  { "id": "v02", "city": "Guadalajara", "country": "Mexico", "altitude_meters": 1566, "avg_temp_c": 23, "avg_humidity": 45, "surface_type": "Grass" },
+  { "id": "v03", "city": "Monterrey", "country": "Mexico", "altitude_meters": 538, "avg_temp_c": 33, "avg_humidity": 68, "surface_type": "Grass" },
+  { "id": "v04", "city": "Los Angeles", "country": "United States", "altitude_meters": 71, "avg_temp_c": 26, "avg_humidity": 65, "surface_type": "Hybrid" },
+  { "id": "v05", "city": "Dallas", "country": "United States", "altitude_meters": 183, "avg_temp_c": 31, "avg_humidity": 64, "surface_type": "Hybrid" },
+  { "id": "v06", "city": "New York New Jersey", "country": "United States", "altitude_meters": 9, "avg_temp_c": 24, "avg_humidity": 71, "surface_type": "Hybrid" },
+  { "id": "v07", "city": "San Francisco Bay Area", "country": "United States", "altitude_meters": 16, "avg_temp_c": 18, "avg_humidity": 79, "surface_type": "Grass" },
+  { "id": "v08", "city": "Boston", "country": "United States", "altitude_meters": 5, "avg_temp_c": 23, "avg_humidity": 70, "surface_type": "Hybrid" },
+  { "id": "v09", "city": "Seattle", "country": "United States", "altitude_meters": 10, "avg_temp_c": 21, "avg_humidity": 74, "surface_type": "Hybrid" },
+  { "id": "v10", "city": "Miami", "country": "United States", "altitude_meters": 3, "avg_temp_c": 32, "avg_humidity": 78, "surface_type": "Hybrid" },
+  { "id": "v11", "city": "Atlanta", "country": "United States", "altitude_meters": 309, "avg_temp_c": 29, "avg_humidity": 73, "surface_type": "Hybrid" },
+  { "id": "v12", "city": "Kansas City", "country": "United States", "altitude_meters": 281, "avg_temp_c": 28, "avg_humidity": 69, "surface_type": "Hybrid" },
+  { "id": "v13", "city": "Toronto", "country": "Canada", "altitude_meters": 76, "avg_temp_c": 23, "avg_humidity": 67, "surface_type": "Hybrid" },
+  { "id": "v14", "city": "Vancouver", "country": "Canada", "altitude_meters": 37, "avg_temp_c": 19, "avg_humidity": 74, "surface_type": "Hybrid" },
+  { "id": "v15", "city": "Philadelphia", "country": "United States", "altitude_meters": 12, "avg_temp_c": 27, "avg_humidity": 72, "surface_type": "Hybrid" },
+  { "id": "v16", "city": "Houston", "country": "United States", "altitude_meters": 24, "avg_temp_c": 33, "avg_humidity": 75, "surface_type": "Hybrid" }
+]
