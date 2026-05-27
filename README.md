@@ -85,10 +85,20 @@ python scripts/analyze_match.py "Analiza Argentina vs Francia"
 python scripts/import_lineups.py ..\..\data\samples\confirmed_lineups_m001.json
 python scripts/import_team_metrics.py ..\..\data\samples\team_metrics_real_schema.json
 python scripts/sync_statsbomb.py 120
+python scripts/sync_statsbomb_full.py
+python scripts/fetch_odds.py
+python scripts/fetch_lineups.py --match fwc26-001
+python scripts/train_once.py
 python scripts/value_bets.py
 python scripts/run_backtest.py
 python scripts/simulate_tournament.py 5000
 ```
+
+Optional provider keys:
+
+- `THE_ODDS_API_KEY`: prematch bookmaker odds through The Odds API.
+- `API_FOOTBALL_KEY` or `APISPORTS_KEY`: live scores, fixture statistics, events and lineups through API-Football/API-Sports.
+- `FOOTBALL_DATA_API_KEY`: fixtures/results/form for generic match research through football-data.org.
 
 If the requested teams exist but the fixture is not in `matches.json`, the engine creates a neutral custom matchup and still returns a full evidence report. Odds/EV are only shown when odds exist for that exact match id.
 
