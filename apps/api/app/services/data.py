@@ -33,7 +33,7 @@ def _load_imported_json(name: str) -> list[dict[str, Any]]:
     imported_file = IMPORT_DIR / name
     if not imported_file.exists():
         return []
-    with imported_file.open("r", encoding="utf-8") as handle:
+    with imported_file.open("r", encoding="utf-8-sig") as handle:
         return json.load(handle)
 
 
@@ -124,7 +124,7 @@ def lineups() -> list[dict[str, Any]]:
     if not imported_file.exists():
         return seed_lineups
 
-    with imported_file.open("r", encoding="utf-8") as handle:
+    with imported_file.open("r", encoding="utf-8-sig") as handle:
         imported = json.load(handle)
 
     imported_keys = {(row.get("match_id"), row.get("team_id")) for row in imported}

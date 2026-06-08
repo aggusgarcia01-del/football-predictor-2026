@@ -104,7 +104,7 @@ def import_lineups(request: LineupImportRequest) -> LineupImportResult:
     ACTIVE_LINEUPS.parent.mkdir(parents=True, exist_ok=True)
     existing: list[dict[str, Any]]
     if ACTIVE_LINEUPS.exists():
-        with ACTIVE_LINEUPS.open("r", encoding="utf-8") as handle:
+        with ACTIVE_LINEUPS.open("r", encoding="utf-8-sig") as handle:
             existing = json.load(handle)
     else:
         existing = []

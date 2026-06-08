@@ -99,7 +99,7 @@ def _merge_existing(dataset_type: str, incoming: list[dict]) -> list[dict]:
 
     output = IMPORT_DIR / f"{dataset_type}.json"
     if output.exists():
-        with output.open("r", encoding="utf-8") as handle:
+        with output.open("r", encoding="utf-8-sig") as handle:
             existing = json.load(handle)
     else:
         existing = []

@@ -32,6 +32,30 @@ def _pick(home: float, draw: float, away: float) -> tuple[str, str, float]:
     return max(options, key=lambda row: row[2])
 
 
+def _aligned_exact_score(prediction, pick: str) -> str:
+    def matches_pick(score: str) -> bool:
+        home_goals, away_goals = [int(part) for part in score.split("-")]
+        if pick == "1":
+            return home_goals > away_goals
+        if pick == "2":
+            return home_goals < away_goals
+        return home_goals == away_goals
+
+    for score in prediction.top_exact_scores:
+        if matches_pick(score.score):
+            return score.score
+
+    home = round(prediction.expected_goals_home)
+    away = round(prediction.expected_goals_away)
+    if pick == "1" and home <= away:
+        home = away + 1
+    if pick == "2" and away <= home:
+        away = home + 1
+    if pick == "X":
+        away = home
+    return f"{home}-{away}"
+
+
 def prode_predictions() -> ProdeBoard:
     rows: list[ProdePrediction] = []
     for match_id in data.matches():
@@ -40,7 +64,7 @@ def prode_predictions() -> ProdeBoard:
         draw = _probability(prediction, "1X2", "Draw")
         away = _probability(prediction, "1X2", "Away")
         pick, pick_label, pick_probability = _pick(home, draw, away)
-        exact_score = prediction.top_exact_scores[0].score if prediction.top_exact_scores else "0-0"
+        exact_score = _aligned_exact_score(prediction, pick)
         home_metrics = data.team_metrics().get(prediction.match.home_team.id)
         away_metrics = data.team_metrics().get(prediction.match.away_team.id)
         data_reliability = round((reliability(home_metrics) + reliability(away_metrics)) / 2, 4)
