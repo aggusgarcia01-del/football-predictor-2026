@@ -136,6 +136,29 @@ class MatchAnalysis(BaseModel):
     next_data_needed: list[str]
 
 
+class ProdePrediction(BaseModel):
+    match: MatchView
+    pick: str
+    pick_label: str
+    exact_score: str
+    confidence: str
+    home_win_probability: float
+    draw_probability: float
+    away_win_probability: float
+    expected_goals_home: float
+    expected_goals_away: float
+    data_reliability: float
+    rationale: list[str]
+    warnings: list[str]
+
+
+class ProdeBoard(BaseModel):
+    status: str
+    generated_at: str
+    predictions: list[ProdePrediction]
+    notes: list[str]
+
+
 class ValueOpportunity(BaseModel):
     match: MatchView
     market: str

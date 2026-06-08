@@ -30,6 +30,7 @@ QUALITY_WEIGHTS = {
     "fbref_manual": 0.72,
     "manual_verified": 0.68,
     "manual": 0.55,
+    "recent_form_gap_fill": 0.5,
     "demo": 0.18,
     "fallback": 0.05,
 }

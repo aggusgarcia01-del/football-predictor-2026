@@ -34,6 +34,16 @@ def test_prediction() -> None:
     }
 
 
+def test_prode_predictions() -> None:
+    response = client.get("/prode/predictions")
+    assert response.status_code == 200
+    body = response.json()
+    assert body["status"] == "RESEARCH_PRODE_NOT_GUARANTEED"
+    assert len(body["predictions"]) >= 1
+    assert body["predictions"][0]["pick"] in {"1", "X", "2"}
+    assert "exact_score" in body["predictions"][0]
+
+
 def test_match_analysis() -> None:
     response = client.get("/analysis/fwc26-001")
     assert response.status_code == 200

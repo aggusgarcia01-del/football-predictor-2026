@@ -113,6 +113,7 @@ HOME_HTML = """
           <button class="secondary" onclick="matchReadiness()">Readiness</button>
           <button class="secondary" onclick="fixedBets()">Apuesta fija</button>
           <button class="secondary" onclick="cockpit()">Cockpit</button>
+          <button class="ghost" onclick="prode()">Prode</button>
           <button class="ghost" onclick="valueBets()">Value bets</button>
           <button class="ghost" onclick="oddsBoard()">Cuotas</button>
           <button class="ghost" onclick="priceTargets()">Cuotas objetivo</button>
@@ -341,6 +342,7 @@ HOME_HTML = """
     async function matchReadiness() { const v = await api(`/model/match-readiness/${fixture.value}`); currentReadiness = v; showJson(v); renderBlockers(v, {blockers:[]}); showTabByName('json'); }
     async function fixedBets() { showJson(await api(`/value-bets/fixed/${fixture.value}`)); showTabByName('json'); }
     async function cockpit() { showJson(await api(`/analysis/${fixture.value}/cockpit`)); showTabByName('json'); }
+    async function prode() { showJson(await api('/prode/predictions')); showTabByName('json'); }
     async function oddsBoard() { showJson(await api(`/value-bets/odds-board/${fixture.value}`)); showTabByName('json'); }
     async function priceTargets() { showJson(await api(`/value-bets/price-targets/${fixture.value}`)); showTabByName('json'); }
     async function prematchAlerts() { showJson(await api('/value-bets/prematch-alerts')); showTabByName('json'); }
